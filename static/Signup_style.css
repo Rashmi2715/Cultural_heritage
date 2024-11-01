@@ -1,0 +1,128 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 50%;
+    font-family: 'Arial', sans-serif;
+    background: url('images/cul.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Centered Signup Container */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Signup Form Styling */
+.signup-form-box {
+    width: 400px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333; /* Dark gray text */
+}
+
+/* Textbox Styles */
+.textbox {
+    margin-bottom: 20px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 6px;
+    background-color: #f4f4f4;
+    outline: none;
+    color: #333; /* Darker text color */
+}
+
+.textbox input:focus {
+    border-color: #2575fc; /* Blue border on focus */
+    background-color: #e3e9ff; /* Light blue background on focus */
+}
+
+/* Button Styles */
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #2575fc; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #6a11cb; /* Gradient background on hover */
+}
+
+/* Login Link Styles */
+.login-link {
+    margin-top: 20px;
+}
+
+.login-link p {
+    color: #555; /* Medium gray text */
+}
+
+.login-link a {
+    color: #2575fc; /* Blue link */
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+footer {
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content a {
+    color: #2575fc; /* Blue color for links */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.social-media a {
+    margin-right: 10px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}

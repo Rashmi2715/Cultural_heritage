@@ -1,0 +1,136 @@
+/* General Body Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/cul.jpg'); /* Background image */
+    background-size: cover; /* Ensure the background covers the entire area */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background fixed during scroll */
+}
+
+/* Main Container */
+.container {
+    max-width: 600px;
+    margin: 100px auto;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    padding: 20px;
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    text-align: center; /* Center align text */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2.2em; /* Larger font size for header */
+    margin-bottom: 20px;
+    color: #333; /* Darker color for contrast */
+}
+
+/* Authentication Buttons */
+.auth-buttons {
+    margin-bottom: 20px;
+}
+
+.auth-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.auth-buttons button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Search Bar */
+.search-bar input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    font-size: 1.1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for input */
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+/* Search Results */
+#results {
+    margin-top: 20px;
+}
+
+.place {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for results */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for places */
+}
+
+.place h2 {
+    margin: 0;
+    font-size: 1.5em; /* Larger font size */
+    color: #007BFF; /* Blue color for headings */
+}
+
+.place p {
+    margin: 5px 0;
+    color: #555; /* Dark gray for paragraph text */
+}
+footer {
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content a {
+    color: #2575fc; /* Blue color for links */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.social-media a {
+    margin-right: 10px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}

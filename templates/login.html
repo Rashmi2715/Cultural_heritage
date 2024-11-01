@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="static/login_style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login to Your Account</h2>
+            <form id="loginForm" action="{{ url_for('login') }}" method="POST"> <!-- Ensure form submits to the login route -->
+                <div class="textbox">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <input type="submit" class="btn" value="Login">
+                <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+                </div>
+            </form>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>Official Website: <a href="https://www.officialheritagesite.com" target="_blank">www.officialheritagesite.com</a></p>
+            <p>Email: <a href="mailto:info@heritage.com">info@heritage.com</a></p>
+            <p>Contact Number: <a href="tel:+1234567890">+1234567890</a></p>
+    
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/official_heritage" target="_blank">
+                    <img src="{{ url_for('static', filename='images/insta.jpg') }}" alt="Instagram Logo" class="social-icon">
+                </a>
+                <span>@official_heritage</span>
+            </div>
+    
+            <p>&copy; 2024 Cultural Heritage. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Heritage - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header">
+    <h1>Welcome to Cultural Heritage</h1>
+    <div class="auth-buttons">
+        <button onclick="window.location.href='/login'">Login</button>
+        <button onclick="window.location.href='/signup'">Sign Up</button>
+    </div>
+</header>
+
+<!-- Main Container -->
+<div class="container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <form method="POST" action="/search">
+            <input type="text" name="search_term" placeholder="Search cultural places..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- Section to display cultural places with images -->
+    <div id="results">
+        <div class="place">
+            <a href="{{ url_for('place_detail', place_name='Hampi') }}">
+                <img src="{{ url_for('static', filename='images/Hampi.jpg') }}" alt="Place 1" class="place-img">
+                <h2>Hampi</h2>
+            </a>
+        </div>
+
+        <div class="place">
+            <a href="{{ url_for('place_detail', place_name='Agra') }}">
+                  <img src="{{ url_for('static', filename='images/Agra.jpg') }}" alt="Place 2" class="place-img">
+                <h2>Agra</h2>
+            </a>
+        </div>
+
+        <div class="place">
+            <a href="{{ url_for('place_detail', place_name='Mysore') }}">
+                   <img src="{{ url_for('static', filename='images/Mysore.jpg') }}" alt="Place 2" class="place-img">
+                <h2>Mysore</h2>
+            </a>
+        </div>
+
+        <div class="place">
+            <a href="{{ url_for('place_detail', place_name='Kolkata') }}">
+                   <img src="{{ url_for('static', filename='images/Kolkata.jpg') }}" alt="Place 2" class="place-img">
+                <h2>Kolkata</h2>
+            </a>
+        </div>
+
+        <!-- Additional places can be added similarly -->
+    </div>
+</div>
+<footer>
+    <div class="footer-content">
+        <p>Official Website: <a href="https://www.officialheritagesite.com" target="_blank">www.officialheritagesite.com</a></p>
+        <p>Email: <a href="mailto:info@heritage.com">info@heritage.com</a></p>
+        <p>Contact Number: <a href="tel:+1234567890">+1234567890</a></p>
+
+        <!-- Social Media Icons -->
+        <div class="social-media">
+            <a href="https://www.instagram.com/official_heritage" target="_blank">
+                <img src="{{ url_for('static', filename='images/insta.jpg') }}" alt="Instagram Logo" class="social-icon">
+            </a>
+            <span>@official_heritage</span>
+        </div>
+
+        <p>&copy; 2024 Cultural Heritage. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

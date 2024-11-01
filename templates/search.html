@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Search Results for "{{ search_term }}"</h1>
+    
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div id="results">
+        {% if places %}
+            {% for place in places %}
+                <div class="place">
+                    <h2>{{ place.name }}</h2>
+                    <p><strong> Description:</strong> {{ place.Description }}</p>
+                    <p><strong>Pincode:</strong> {{ place.pincode }}</p>
+                    <p><strong>Preserved Status:</strong> {{ place.preserved_status or 'N/A' }}</p>
+                    <p><strong>Construction Period:</strong> {{ place.Construction_period or 'N/A' }}</p>
+                    <p><strong>Historical Significance:</strong> {{ place.historical_significance or 'N/A' }}</p>
+                    <p><strong>Architectural Style:</strong> {{ place.Architural_style or 'N/A' }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No places found matching your search term.</p>
+        {% endif %}
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <p>Official Website: <a href="https://www.officialheritagesite.com" target="_blank">www.officialheritagesite.com</a></p>
+        <p>Email: <a href="mailto:info@heritage.com">info@heritage.com</a></p>
+        <p>Contact Number: <a href="tel:+1234567890">+1234567890</a></p>
+
+        <!-- Social Media Icons -->
+        <div class="social-media">
+            <a href="https://www.instagram.com/official_heritage" target="_blank">
+                <img src="{{ url_for('static', filename='images/insta.jpg') }}" alt="Instagram Logo" class="social-icon">
+            </a>
+            <span>@official_heritage</span>
+        </div>
+
+        <p>&copy; 2024 Cultural Heritage. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
