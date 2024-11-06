@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in {{ place.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Events in {{ place.name }}</h1>
+        {% if events %}
+            <ul>
+                {% for event in events %}
+                    <li>
+                        <h3>{{ event.Name }}</h3>
+                        <p><strong>Description:</strong> {{ event.Description }}</p>
+                        <p><strong>Date:</strong> {{ event.Date }}</p>
+                        <p><strong>Type:</strong> {{ event.Event_type or 'N/A' }}</p>
+                        {% if event.image %}
+                        <img src="{{ url_for('static', filename=event.image) }}" alt="Event Image" style="max-width: 200px; height: auto">
+>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No events found for this place.</p>
+        {% endif %}
+        <button onclick="window.history.back()">Go Back</button>
+    </div>
+</body>
+</html>

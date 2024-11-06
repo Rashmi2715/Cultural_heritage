@@ -3,26 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ place.name }}</title>
+    <title>{{ place.Name }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>{{ place.name }}</h1>
+        <h1>{{ place.Name }}</h1>
         <p><strong>Description:</strong> {{ place.Description }}</p>
         <p><strong>Pincode:</strong> {{ place.pincode }}</p>
         <p><strong>Preserved Status:</strong> {{ place.preserved_status or 'N/A' }}</p>
         <p><strong>Construction Period:</strong> {{ place.Construction_period or 'N/A' }}</p>
         <p><strong>Historical Significance:</strong> {{ place.historical_significance or 'N/A' }}</p>
         <p><strong>Architectural Style:</strong> {{ place.Architural_style or 'N/A' }}</p>
+
+        <!-- Links to related information -->
+        <div class="related-links">
+            <h3>Related Information</h3>
+            <ul>
+                <li><a href="{{ url_for('artifacts', place_name=place.Name) }}">Artifacts of {{ place.Name }}</a></li>
+                <li><a href="{{ url_for('events', place_name=place.Name) }}">Events on {{ place.Name }}</a></li>
+                <li><a href="{{ url_for('organizations', place_name=place.Name) }}">Organizations in {{ place.Name }}</a></li>
+                <li><a href="{{ url_for('famous_food', place_name=place.Name) }}">Famous Food in {{ place.Name }}</a></li>
+            </ul>
+        </div>
+
         <button onclick="window.history.back()">Go Back</button>
     </div>
+
     <footer>
         <div class="footer-content">
             <p>Official Website: <a href="https://www.officialheritagesite.com" target="_blank">www.officialheritagesite.com</a></p>
             <p>Email: <a href="mailto:info@heritage.com">info@heritage.com</a></p>
             <p>Contact Number: <a href="tel:+1234567890">+1234567890</a></p>
-    
+
             <!-- Social Media Icons -->
             <div class="social-media">
                 <a href="https://www.instagram.com/official_heritage" target="_blank">
@@ -30,7 +43,7 @@
                 </a>
                 <span>@official_heritage</span>
             </div>
-    
+
             <p>&copy; 2024 Cultural Heritage. All rights reserved.</p>
         </div>
     </footer>

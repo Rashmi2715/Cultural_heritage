@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artifacts</title>
+</head>
+<body>
+    <h1>Artifacts</h1>
+    {% if artifacts %}
+        <ul>
+            {% for artifact in artifacts %}
+                <li>
+                    <h2>{{ artifact.Name }}</h2>
+                    <p><strong>Description:</strong> {{ artifact.Description }}</p>
+                    <p><strong>Material:</strong> {{ artifact.Material }}</p>
+                    <p><strong>Date of Creation:</strong> {{ artifact.Date_of_creation }}</p>
+                    <p><strong>Cultural Significance:</strong> {{ artifact.cultural_significance }}</p>
+                    <h3>Images:</h3>
+                    <ul>
+                        {% for image in artifact.Images %}
+                            <li>
+                                <img src="{{ url_for('static', filename='artifacts/' + image) }}" alt="{{ artifact.Name }}" width="300">
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No artifacts found for this place.</p>
+    {% endif %}
+    <button onclick="window.history.back()">Go Back</button>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizations in {{ place.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Organizations in {{ place.name }}</h1>
+        {% if organizations %}
+            <ul>
+                {% for org in organizations %}
+                    <li>
+                        <h3>{{ org.Name }}</h3>
+                        <p><strong>Description:</strong> {{ org.Description }}</p>
+                        <p><strong>City:</strong> {{ org.City or 'N/A' }}</p>
+                        <p><strong>State:</strong> {{ org.State or 'N/A' }}</p>
+                        <p><strong>Pincode:</strong> {{ org.Pincode or 'N/A' }}</p>
+                        {% if org.Website_link %}
+                            <p><strong>Website:</strong> <a href="{{ org.Website_link }}" target="_blank">{{ org.Website_link }}</a></p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No organizations found for this place.</p>
+        {% endif %}
+        <button onclick="window.history.back()">Go Back</button>
+    </div>
+</body>
+</html>

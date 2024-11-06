@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Food in {{ place.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Famous Food in {{ place.name }}</h1>
+        
+        {% if foods %}
+            <ul>
+                {% for food in foods %}
+                    <li>
+                        <h2>{{ food.food_name }}</h2>
+                        <p><strong>Description:</strong> {{ food.Description }}</p>
+                        <p><strong>Cuisine Type:</strong> {{ food.Cusine_type }}</p>
+                        
+                        <div class="food-images">
+                            {% if food.images %}
+                                <h3>Images:</h3>
+                                <ul>
+                                    {% for image in food.images %}
+                                        <li><img src="{{ url_for('static', filename='food/' ~ image) }}" alt="{{ image }}" width="200"></li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <p>No images available for this food.</p>
+                            {% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No famous food found for this place.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
