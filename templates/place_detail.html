@@ -16,16 +16,29 @@
         <p><strong>Historical Significance:</strong> {{ place.historical_significance or 'N/A' }}</p>
         <p><strong>Architectural Style:</strong> {{ place.Architural_style or 'N/A' }}</p>
 
-        <!-- Links to related information -->
+        
         <div class="related-links">
-            <h3>Related Information</h3>
-            <ul>
-                <li><a href="{{ url_for('artifacts', place_name=place.Name) }}">Artifacts of {{ place.Name }}</a></li>
-                <li><a href="{{ url_for('events', place_name=place.Name) }}">Events on {{ place.Name }}</a></li>
-                <li><a href="{{ url_for('organizations', place_name=place.Name) }}">Organizations in {{ place.Name }}</a></li>
-                <li><a href="{{ url_for('famous_food', place_name=place.Name) }}">Famous Food in {{ place.Name }}</a></li>
-            </ul>
+            <h3>Explore More About {{ place.Name }}</h3>
+            <div class="related-info-cards">
+                <a href="{{ url_for('artifacts', place_name=place.Name) }}" class="related-card">
+                    <h4>Artifacts</h4>
+                    
+                </a>
+                <a href="{{ url_for('events', place_name=place.Name) }}" class="related-card">
+                    <h4>Events</h4>
+                    
+                </a>
+                <a href="{{ url_for('organizations', place_name=place.Name) }}" class="related-card">
+                    <h4>Organizations</h4>
+                   
+                </a>
+                <a href="{{ url_for('famous_food', place_name=place.Name) }}" class="related-card">
+                    <h4>Famous Food</h4>
+                   
+                </a>
+            </div>
         </div>
+        
 
         <button onclick="window.history.back()">Go Back</button>
     </div>

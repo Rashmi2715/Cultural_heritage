@@ -46,7 +46,45 @@ def login():
             cursor.close()
             connection.close()
     return render_template('login.html')
-
+# Forgot Password route
+@app.route('/forgot_password', methods=['GET', 'POST'])
+def forgot_password():
+    if request.method == 'POST':
+        username = request.form['username']
+        new_password = request.form['new_password']
+        confirm_password = request.form['confirm_password']
+        
+        if new_password != confirm_password:
+            flash("Passwords do not match. Please try again.", "error")
+            return redirect(url_for('forgot_password'))
+        
+        try:
+            connection = get_db_connection()
+            cursor = connection.cursor()
+            
+            # Verify if the username exists
+            cursor.execute("SELECT * FROM user WHERE Username = %s", (username,))
+            user = cursor.fetchone()
+            
+            if user:
+                # Update the password
+                update_query = "UPDATE user SET Password = %s WHERE Username = %s"
+                cursor.execute(update_query, (new_password, username))
+                connection.commit()
+                
+                flash("Password updated successfully! Please login with your new password.", "success")
+                return redirect(url_for('login'))
+            else:
+                flash("Username not found. Please try again.", "error")
+        
+        except Error as e:
+            flash("An error occurred while updating the password. Please try again.", "error")
+        
+        finally:
+            cursor.close()
+            connection.close()
+    
+    return render_template('forgot_password.html')
 # Signup route
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():

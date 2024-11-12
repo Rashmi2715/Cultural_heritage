@@ -1,0 +1,146 @@
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to right, #ff512f, #f09819);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #2e2b2b;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.container {
+    max-width: 1500px;
+    margin: 50px auto;
+    padding: 100px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    border: 2px solid #333;
+}
+
+/* Header Styling */
+h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0px; /* Reduced margin below heading */
+    text-align: center;
+}
+
+/* Artifacts List */
+.artifact-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Increased .artifact-item size */
+.artifact-item {
+    margin-bottom: 25px; /* Reduced spacing between items */
+    padding: 30px;       /* Increased padding for artifact content */
+    background-color: rgba(245, 245, 245, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Artifact Name */
+.artifact-item h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.0em;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Artifact Description and Details */
+.artifact-item p {
+    font-size: 1.5em;
+    color: #444;
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+/* Images Section */
+.artifact-images {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+}
+
+.artifact-image {
+    width: 700px; /* Slightly increased image width */
+    height: 700px; /* Slightly increased image height */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.artifact-image img {
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+}
+
+/* Go Back Button Styling */
+button {
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+/* No Artifacts Message */
+.no-artifacts {
+    font-size: 1.2em;
+    color: #444;
+    margin-top: 30px;
+}
+
+
+footer {
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.footer-content a {
+    color: white; /* Orange color for links */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content p {
+    margin: 12px 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.social-media a {
+    margin-right: 10px;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+}

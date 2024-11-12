@@ -1,42 +1,47 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body, html {
-    height: 50%;
+body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to right, #ff512f, #f09819);
-    background-size: cover;
-}
-
-/* Centered Signup Container */
-.signup-container {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    color: rgba(10, 10, 10, 0.922);
+    flex-direction: column;
 }
 
-/* Signup Form Styling */
-.signup-form-box {
-    width: 400px;
+/* Main container for the page */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Forgot Password Container */
+.forgot-password-container {
+    background-color: antiquewhite;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    width: 350px;
     text-align: center;
 }
 
 h2 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333; /* Dark gray text */
+    color: #333;
 }
 
-/* Textbox Styles */
+/* Input field styling */
 .textbox {
     margin-bottom: 20px;
 }
@@ -45,60 +50,57 @@ h2 {
     width: 100%;
     padding: 12px;
     font-size: 16px;
-    border: 1px solid #ddd; /* Light gray border */
+    border: 1px solid #ddd;
     border-radius: 6px;
     background-color: #f4f4f4;
     outline: none;
-    color: #333; /* Darker text color */
+    color: #333;
 }
 
 .textbox input:focus {
-    border-color: #2575fc; /* Blue border on focus */
-    background-color: #e3e9ff; /* Light blue background on focus */
+    border-color: #2575fc;
+    background-color: #e3e9ff;
 }
 
-/* Button Styles */
+/* Submit button styling */
 .btn {
     width: 100%;
     padding: 12px;
-    background: #2575fc; /* Blue background */
+    background: #2575fc;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.3s;
 }
 
 .btn:hover {
-    background: #6a11cb; /* Gradient background on hover */
+    background: #6a11cb;
 }
 
-/* Login Link Styles */
-.login-link {
-    margin-top: 20px;
+/* Flash messages styling */
+.flashes {
+    list-style-type: none;
+    color: #ff4d4d;
+    padding: 0;
 }
 
-.login-link p {
-    color: #555; /* Medium gray text */
+.flashes li {
+    margin: 10px 0;
 }
 
-.login-link a {
-    color: #2575fc; /* Blue link */
-    text-decoration: none;
-}
-
-.login-link a:hover {
-    text-decoration: underline;
-}
+/* Footer styling */
 footer {
     color: white;
     padding: 20px;
     text-align: center;
+    margin-top: auto;
+    width: 100%;
 }
 
 .footer-content a {
-    color: #2575fc; /* Blue color for links */
+    color: #2575fc;
     text-decoration: none;
 }
 
@@ -110,6 +112,7 @@ footer {
     margin: 10px 0;
 }
 
+/* Social media icons and links */
 .social-media {
     display: flex;
     justify-content: center;

@@ -3,32 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Artifacts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='artifacts.css') }}">
 </head>
 <body>
-    <h1>Artifacts</h1>
-    {% if artifacts %}
-        <ul>
-            {% for artifact in artifacts %}
-                <li>
-                    <h2>{{ artifact.Name }}</h2>
-                    <p><strong>Description:</strong> {{ artifact.Description }}</p>
-                    <p><strong>Material:</strong> {{ artifact.Material }}</p>
-                    <p><strong>Date of Creation:</strong> {{ artifact.Date_of_creation }}</p>
-                    <p><strong>Cultural Significance:</strong> {{ artifact.cultural_significance }}</p>
-                    <h3>Images:</h3>
-                    <ul>
-                        {% for image in artifact.Images %}
-                            <li>
-                                <img src="{{ url_for('static', filename='artifacts/' + image) }}" alt="{{ artifact.Name }}" width="300">
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No artifacts found for this place.</p>
-    {% endif %}
-    <button onclick="window.history.back()">Go Back</button>
+    <div class="container">
+        <h1>Artifacts</h1>
+        {% if artifacts %}
+            <ul class="artifact-list">
+                {% for artifact in artifacts %}
+                    <li class="artifact-item">
+                        <h2>{{ artifact.Name }}</h2>
+                        <p><strong>Description:</strong> {{ artifact.Description }}</p>
+                        <p><strong>Material:</strong> {{ artifact.Material }}</p>
+                        <p><strong>Date of Creation:</strong> {{ artifact.Date_of_creation }}</p>
+                        <p><strong>Cultural Significance:</strong> {{ artifact.cultural_significance }}</p>
+                        
+                        <div class="artifact-images">
+                            {% for image in artifact.Images %}
+                                <div class="artifact-image">
+                                    <img src="{{ url_for('static', filename='artifacts/' + image) }}" alt="{{ artifact.Name }}">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-artifacts">No artifacts found for this place.</p>
+        {% endif %}
+        
+        <div class="back-button">
+            <button onclick="window.history.back()">Go Back</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>Official Website: <a href="https://www.officialheritagesite.com" target="_blank">www.officialheritagesite.com</a></p>
+            <p>Email: <a href="mailto:info@heritage.com">info@heritage.com</a></p>
+            <p>Contact Number: <a href="tel:+1234567890">+1234567890</a></p>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/official_heritage" target="_blank">
+                    <img src="{{ url_for('static', filename='images/insta.jpg') }}" alt="Instagram Logo" class="social-icon">
+                </a>
+                <span>@official_heritage</span>
+            </div>
+
+            <p>&copy; 2024 Cultural Heritage. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

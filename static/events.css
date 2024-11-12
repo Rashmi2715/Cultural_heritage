@@ -1,0 +1,135 @@
+/* Body Styling */
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to right, #ff512f, #f09819);
+    background-size: cover;
+    background-position: center;
+    color: #2e2b2b;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.container {
+    max-width: 1500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid #333;
+}
+
+/* Header Styling */
+header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 3.2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Events Grid */
+.events-grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* Event Card Styling */
+.event-card {
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 1.5em;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Event Image */
+.event-image {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.event-image img {
+    width: 100%; /* Adjusted to take full width of the container */
+    max-width: 500px; /* Set a max-width for better control */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* No Events Message */
+.no-events {
+    font-size: 1.2em;
+    color: #444;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Go Back Button Styling */
+.back-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    font-size: 1em;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+footer {
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.footer-content a {
+    color: white; /* Orange color for links */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content p {
+    margin: 12px 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.social-media a {
+    margin-right: 10px;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+}
+

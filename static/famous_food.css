@@ -1,0 +1,127 @@
+/* Body Styling */
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to right, #ff512f, #f09819);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #2e2b2b;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.container {
+    max-width: 1500px;
+    margin: 50px auto;
+    padding: 100px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    border: 2px solid #333;
+}
+
+/* Header Styling */
+h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 4.0em;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Food List Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: rgba(245, 245, 245, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Food Name */
+h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.0em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Description and Cuisine Type */
+p {
+    font-size: 1.5em;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Food Images Styling */
+.food-images {
+    margin-top: 15px;
+    display: flex;
+    gap: 200px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.food-images ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+}
+
+.food-images li {
+    list-style-type: none;
+    margin: 0;
+    flex: 0 0 auto; /* Prevent images from stretching */
+}
+
+.food-images img {
+    width: 400px; /* Set a uniform width */
+    height: 400px; /* Set a uniform height */
+    object-fit: cover; /* Ensure images are cropped to fill the space without stretching */
+    border-radius: 8px; /* Optional: add border radius for rounded corners */
+}
+
+
+footer {
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.footer-content a {
+    color: white; /* Orange color for links */
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content p {
+    margin: 12px 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.social-media a {
+    margin-right: 10px;
+}
+
+.social-icon {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+}

@@ -1,112 +1,94 @@
-/* General Body Style */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    background-image: url('images/cul.jpg'); /* Background image */
-    background-size: cover; /* Ensure the background covers the entire area */
-    background-position: center; /* Center the background image */
-    background-attachment: fixed; /* Keep the background fixed during scroll */
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to right, #ff512f, #f09819);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #2e2b2b;
 }
 
-/* Main Container */
 .container {
-    max-width: 600px;
-    margin: 100px auto;
-    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
-    padding: 20px;
-    border-radius: 10px; /* Smooth corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
-    text-align: center; /* Center align text */
+    max-width: 900px; /* Wider container */
+    background-color: white;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: left; /* Left-aligned for readability */
+    border: 2px solid black;
 }
 
 /* Header Styling */
 h1 {
-    font-size: 2.2em; /* Larger font size for header */
-    margin-bottom: 20px;
-    color: #333; /* Darker color for contrast */
-}
-
-/* Authentication Buttons */
-.auth-buttons {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: black; /* Deep cultural red */
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.auth-buttons button {
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s; /* Smooth hover effect */
+/* Description and Subsections */
+h2  {
+    font-family: 'Merriweather', serif;
+    color: black;
+    line-height: 1.6;
 }
 
-.auth-buttons button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+.container p {
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: black /* Darker shade for body text */
 }
 
-/* Search Bar */
-.search-bar input {
-    padding: 10px;
-    width: 80%;
-    margin-bottom: 10px;
-    border: 1px solid #007BFF;
-    border-radius: 5px;
-    font-size: 1.1em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for input */
-}
-
-.search-bar button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-bar button:hover {
-    background-color: #0056b3;
-}
-
-/* Search Results */
-#results {
-    margin-top: 20px;
-}
-
-.place {
+/* Explore More Section Styling */
+.related-links h3 {
+    font-size: 2em;
+    color: #333;
     margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for results */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for places */
+    text-align: center;
 }
 
-.place h2 {
-    margin: 0;
-    font-size: 1.5em; /* Larger font size */
-    color: #007BFF; /* Blue color for headings */
+/* Related Info Card Styling */
+.related-info-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
 }
 
-.place p {
+.related-card {
+   
+    color: black;
+    padding: 12px;
+    width: 130px; /* Smaller card */
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid black;
+}
+
+.related-card h4 {
     margin: 5px 0;
-    color: #555; /* Dark gray for paragraph text */
+    font-size: 1.1em;
 }
+
+.related-card:hover {
+    transform: scale(1.05);
+    background-color: white; /* Darker orange on hover */
+}
+
 footer {
     color: white;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
 }
 
 .footer-content a {
-    color: #2575fc; /* Blue color for links */
+    color: white; /* Orange color for links */
     text-decoration: none;
 }
 
@@ -115,7 +97,7 @@ footer {
 }
 
 .footer-content p {
-    margin: 10px 0;
+    margin: 12px 0;
 }
 
 .social-media {
@@ -130,7 +112,7 @@ footer {
 }
 
 .social-icon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     vertical-align: middle;
 }

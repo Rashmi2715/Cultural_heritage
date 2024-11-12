@@ -4,30 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events in {{ place.name }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='events.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Events in {{ place.name }}</h1>
+        <header>
+            <h1>Events in {{ place.name }}</h1>
+        </header>
+        
         {% if events %}
-            <ul>
+            <div class="events-grid">
                 {% for event in events %}
-                    <li>
-                        <h3>{{ event.Name }}</h3>
+                    <div class="event-card">
+                        <h2>{{ event.Name }}</h2>
                         <p><strong>Description:</strong> {{ event.Description }}</p>
                         <p><strong>Date:</strong> {{ event.Date }}</p>
                         <p><strong>Type:</strong> {{ event.Event_type or 'N/A' }}</p>
+                        
                         {% if event.image %}
-                        <img src="{{ url_for('static', filename=event.image) }}" alt="Event Image" style="max-width: 200px; height: auto">
->
+                            <div class="event-image">
+                                <img src="{{ url_for('static', filename=event.image) }}" alt="{{ event.Name }}">
+                            </div>
                         {% endif %}
-                    </li>
+                    </div>
                 {% endfor %}
-            </ul>
+            </div>
         {% else %}
-            <p>No events found for this place.</p>
+            <p class="no-events">No events found for this place.</p>
         {% endif %}
-        <button onclick="window.history.back()">Go Back</button>
+
+        <div class="back-button">
+            <button onclick="window.history.back()">Go Back</button>
+        </div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Official Website: <a href="https://www.officialheritagesite.com" target="_blank">www.officialheritagesite.com</a></p>
+            <p>Email: <a href="mailto:info@heritage.com">info@heritage.com</a></p>
+            <p>Contact Number: <a href="tel:+1234567890">+1234567890</a></p>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/official_heritage" target="_blank">
+                    <img src="{{ url_for('static', filename='images/insta.jpg') }}" alt="Instagram Logo" class="social-icon">
+                </a>
+                <span>@official_heritage</span>
+            </div>
+
+            <p>&copy; 2024 Cultural Heritage. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>

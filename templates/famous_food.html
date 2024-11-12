@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Famous Food in {{ place.name }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='famous_food.css') }}">
 </head>
 <body>
     <div class="container">
@@ -20,7 +20,6 @@
                         
                         <div class="food-images">
                             {% if food.images %}
-                                <h3>Images:</h3>
                                 <ul>
                                     {% for image in food.images %}
                                         <li><img src="{{ url_for('static', filename='food/' ~ image) }}" alt="{{ image }}" width="200"></li>
@@ -37,5 +36,26 @@
             <p>No famous food found for this place.</p>
         {% endif %}
     </div>
+    
+    <div class="back-button">
+        <button onclick="window.history.back()">Go Back</button>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>Official Website: <a href="https://www.officialheritagesite.com" target="_blank">www.officialheritagesite.com</a></p>
+            <p>Email: <a href="mailto:info@heritage.com">info@heritage.com</a></p>
+            <p>Contact Number: <a href="tel:+1234567890">+1234567890</a></p>
+
+            <!-- Social Media Icons -->
+            <div class="social-media">
+                <a href="https://www.instagram.com/official_heritage" target="_blank">
+                    <img src="{{ url_for('static', filename='images/insta.jpg') }}" alt="Instagram Logo" class="social-icon">
+                </a>
+                <span>@official_heritage</span>
+            </div>
+
+            <p>&copy; 2024 Cultural Heritage. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
